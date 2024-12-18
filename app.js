@@ -1,13 +1,12 @@
 const express = require("express");
-const sendSlackNotification = require("./slack");
+const sendSMS = require("./notifications");
 const app = express();
 const port = process.env.PORT;
 
-const email = "email@example.com";
-const messageText =
-  "🚀 SEO Validation Completed: All links passed successfully!";
-
-sendSlackNotification(email, messageText);
+sendSMS(
+  "+12345678901",
+  "🚀 SEO Validation Completed: All links passed successfully!"
+);
 
 app.get("/", (req, res) => {
   res.send("Hello, Node.js with Express!");
