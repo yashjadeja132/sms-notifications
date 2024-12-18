@@ -1,6 +1,7 @@
 const { WebClient } = require("@slack/web-api");
 
 const token = process.env.TOKEN_KEY;
+
 const web = new WebClient(token);
 
 async function getUserIdByEmail(email) {
